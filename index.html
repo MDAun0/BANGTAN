@@ -1,155 +1,185 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BTS Fanpage - Purple Dream</title>
-<style>
-  body {
-    margin: 0;
-    font-family: 'Nunito Sans', sans-serif;
-    background: linear-gradient(135deg, #a78bfa, #f0abfc, #fbcfe8);
-    color: #fff;
-  }
-  header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background: rgba(0,0,0,0.3);
-    backdrop-filter: blur(10px);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    z-index: 1000;
-  }
-  header a {
-    color: #fff;
-    text-decoration: none;
-    margin: 0 10px;
-    font-weight: 600;
-  }
-  .logo img {
-    height: 50px;
-  }
-  .hero {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding-top: 60px;
-  }
-  .hero h1 {
-    font-size: 3rem;
-    margin-bottom: 10px;
-    text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
-  }
-  .hero p {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
-  }
-  section {
-    padding: 80px 20px;
-    max-width: 1000px;
-    margin: auto;
-  }
-  .section-title {
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 40px;
-    text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
-  }
-  .members, .gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
-    gap: 20px;
-  }
-  .member-card, .gallery-item {
-    background: rgba(255,255,255,0.1);
-    backdrop-filter: blur(8px);
-    border-radius: 15px;
-    padding: 15px;
-    text-align: center;
-  }
-  .member-card img, .gallery-item img {
-    width: 100%;
-    border-radius: 15px;
-    margin-bottom: 10px;
-  }
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BTS Fan Page – Purple Dream</title>
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;700&family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Noto Sans KR', sans-serif;
+      color: #111;
+      background-color: #fff;
+      line-height: 1.6;
+    }
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px 30px;
+      border-bottom: 1px solid #eee;
+      background-color: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    header img {
+      height: 50px;
+    }
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+    nav ul li {
+      margin-left: 20px;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 600;
+      font-family: 'Jost', sans-serif;
+    }
+    #hero {
+      padding: 100px 20px;
+      text-align: center;
+      background: linear-gradient(to bottom right, #f0f4ff, #fff0f6);
+    }
+    #hero h1 {
+      font-family: 'Jost', sans-serif;
+      font-size: 3rem;
+      margin-bottom: 10px;
+      color: #222;
+    }
+    #hero p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin: auto;
+    }
+    section {
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+    section h2 {
+      font-family: 'Jost', sans-serif;
+      font-size: 2.5rem;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .member-grid, .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 30px;
+    }
+    .member {
+      text-align: center;
+    }
+    .member img {
+      width: 100%;
+      max-width: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    .member h3 {
+      font-family: 'Jost', sans-serif;
+      margin: 5px 0;
+      font-size: 1.1rem;
+    }
+    .member p {
+      font-size: 0.9rem;
+      color: #444;
+    }
+    .gallery-grid img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      nav ul {
+        flex-direction: column;
+        padding-top: 10px;
+      }
+      nav ul li {
+        margin: 10px 0 0;
+      }
+    }
+  </style>
 </head>
 <body>
-<header>
-  <div class="logo">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/BTS_logo.svg" alt="BTS Logo">
-  </div>
-  <nav>
-    <a href="#hero">Home</a>
-    <a href="#members">Members</a>
-    <a href="#gallery">Gallery</a>
-  </nav>
-</header>
+  <header>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/e/ef/BTS_logo.svg" alt="BTS Logo" />
+    <nav>
+      <ul>
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#members">Members</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+      </ul>
+    </nav>
+  </header>
 
-<div class="hero" id="hero">
-  <h1>BTS Fanpage</h1>
-  <p>Welcome to the Purple Dream BTS fanpage — all things ARMY and BTS!</p>
-</div>
+  <section id="hero">
+    <h1>Welcome to the BTS Fan Page</h1>
+    <p>A tribute to the world’s most iconic K-pop group — Bangtan Sonyeondan 💜</p>
+  </section>
 
-<section id="members">
-  <h2 class="section-title">Members</h2>
-  <div class="members">
-    <div class="member-card">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Blank_profile_picture.svg/240px-Blank_profile_picture.svg.png" alt="RM">
-      <h3>RM</h3>
-      <p>Leader, Main Rapper</p>
+  <section id="members">
+    <h2>Meet the Members</h2>
+    <div class="member-grid">
+      <div class="member">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/1/1d/BTS_RM_and_V_military_discharge%2C_10_June_2025_01.png" alt="RM">
+        <h3>RM (Kim Nam-joon)</h3>
+        <p>Leader, rapper, lyricist, philosopher of BTS.</p>
+      </div>
+      <div class="member">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/3/3b/BTS_Jin_at_Maison_Fred%2C_13_March_2025_01.jpg" alt="Jin">
+        <h3>Jin (Kim Seok-jin)</h3>
+        <p>Vocalist, visual king, and World Wide Handsome.</p>
+      </div>
+      <div class="member">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/7/73/Suga_for_BTS_5th_anniversary_party_in_LA_photoshoot_by_Dispatch%2C_May_2018_11.jpg" alt="Suga">
+        <h3>Suga (Min Yoon-gi)</h3>
+        <p>Producer, rapper, introspective genius of Agust D.</p>
+      </div>
+      <div class="member">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/8/8c/J-Hope_for_BTS_5th_anniversary_party_in_LA_photoshoot_by_Dispatch%2C_May_2018_07.jpg" alt="J-Hope">
+        <h3>J-Hope (Jung Ho-seok)</h3>
+        <p>Dancer, rapper, sunshine and spark of BTS.</p>
+      </div>
+      <div class="member">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/e/e5/Jimin_for_BTS_5th_anniversary_party_in_LA_photoshoot_by_Dispatch%2C_May_2018_09.jpg" alt="Jimin">
+        <h3>Jimin (Park Ji-min)</h3>
+        <p>Vocalist, dancer, and heart-flutter expert.</p>
+      </div>
+      <div class="member">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/3/30/V_for_BTS_5th_anniversary_party_in_LA_photoshoot_by_Dispatch%2C_May_2018_07.jpg" alt="V">
+        <h3>V (Kim Tae-hyung)</h3>
+        <p>Vocalist, visual, and jazz-soul dreamer.</p>
+      </div>
+      <div class="member">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/f/f7/Jungkook_for_BTS_5th_anniversary_party_in_LA_photoshoot_by_Dispatch%2C_May_2018_03.jpg" alt="Jungkook">
+        <h3>Jungkook (Jeon Jung-kook)</h3>
+        <p>Main vocalist, Golden Maknae, all-rounder.</p>
+      </div>
     </div>
-    <div class="member-card">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Blank_profile_picture.svg/240px-Blank_profile_picture.svg.png" alt="Jin">
-      <h3>Jin</h3>
-      <p>Vocalist, Visual</p>
-    </div>
-    <div class="member-card">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Blank_profile_picture.svg/240px-Blank_profile_picture.svg.png" alt="Suga">
-      <h3>Suga</h3>
-      <p>Rapper</p>
-    </div>
-    <div class="member-card">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Blank_profile_picture.svg/240px-Blank_profile_picture.svg.png" alt="J-Hope">
-      <h3>J-Hope</h3>
-      <p>Rapper, Dancer</p>
-    </div>
-    <div class="member-card">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Blank_profile_picture.svg/240px-Blank_profile_picture.svg.png" alt="Jimin">
-      <h3>Jimin</h3>
-      <p>Vocalist, Dancer</p>
-    </div>
-    <div class="member-card">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Blank_profile_picture.svg/240px-Blank_profile_picture.svg.png" alt="V">
-      <h3>V</h3>
-      <p>Vocalist</p>
-    </div>
-    <div class="member-card">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Blank_profile_picture.svg/240px-Blank_profile_picture.svg.png" alt="Jungkook">
-      <h3>Jungkook</h3>
-      <p>Main Vocalist, Dancer</p>
-    </div>
-  </div>
-</section>
+  </section>
 
-<section id="gallery">
-  <h2 class="section-title">Gallery</h2>
-  <div class="gallery">
-    <div class="gallery-item">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/BTS_logo.svg" alt="BTS Logo">
-      <p>BTS Logo</p>
+  <section id="gallery">
+    <h2>Live Moments</h2>
+    <div class="gallery-grid">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/3/39/BTS_performing_%22DNA%22_during_the_Love_Yourself_concert_in_Nagoya%2C_13_January_2019_01.jpg" alt="BTS performing DNA">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/5/55/BTS_performing_%22Fake_Love%22_at_Seoul_Music_Awards%2C_15_January_2019.jpg" alt="Fake Love Seoul Awards">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/68/BTS_performing_%22Mic_Drop%22_during_Love_Yourself_concert_in_Hong_Kong%2C_24_March_2019_03.jpg" alt="Mic Drop in Hong Kong">
     </div>
-    <div class="gallery-item">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/1/16/BTS_on_stage_2019.jpg" alt="BTS on stage">
-      <p>BTS Performance</p>
-    </div>
-  </div>
-</section>
+  </section>
 </body>
 </html>
