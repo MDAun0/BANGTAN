@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BTS Fanpage - Purple Dream</title>
+<style>
+  body {
+    margin: 0;
+    font-family: 'Nunito Sans', sans-serif;
+    background: linear-gradient(135deg, #a78bfa, #f0abfc, #fbcfe8);
+    color: #fff;
+  }
+  header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(0,0,0,0.3);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    z-index: 1000;
+  }
+  header a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: 600;
+  }
+  .logo img {
+    height: 50px;
+  }
+  .hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 60px;
+  }
+  .hero h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+  }
+  .hero p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+  section {
+    padding: 80px 20px;
+    max-width: 1000px;
+    margin: auto;
+  }
+  .section-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 40px;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+  }
+  .members, .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+    gap: 20px;
+  }
+  .member-card, .gallery-item {
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(8px);
+    border-radius: 15px;
+    padding: 15px;
+    text-align: center;
+  }
+  .member-card img, .gallery-item img {
+    width: 100%;
+    border-radius: 15px;
+    margin-bottom: 10px;
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="logo">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/BTS_logo.svg" alt="BTS Logo">
+  </div>
+  <nav>
+    <a href="#hero">Home</a>
+    <a href="#members">Members</a>
+    <a href="#gallery">Gallery</a>
+  </nav>
+</header>
+
+<div class="hero" id="hero">
+  <h1>BTS Fanpage</h1>
+  <p>Welcome to the Purple Dream BTS fanpage — all things ARMY and BTS!</p>
+</div>
+
+<section id="members">
+  <h2 class="section-title">Members</h2>
+  <div class="members">
+    <div class="member-card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Blank_profile_picture.svg/240px-Blank_profile_picture.svg.png" alt="RM">
+      <h3>RM</h3>
+      <p>Leader, Main Rapper</p>
+    </div>
+    <div class="member-card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Blank_profile_picture.svg/240px-Blank_profile_picture.svg.png" alt="Jin">
+      <h3>Jin</h3>
+      <p>Vocalist, Visual</p>
+    </div>
+    <div class="member-card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Blank_profile_picture.svg/240px-Blank_profile_picture.svg.png" alt="Suga">
+      <h3>Suga</h3>
+      <p>Rapper</p>
+    </div>
+    <div class="member-card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Blank_profile_picture.svg/240px-Blank_profile_picture.svg.png" alt="J-Hope">
+      <h3>J-Hope</h3>
+      <p>Rapper, Dancer</p>
+    </div>
+    <div class="member-card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Blank_profile_picture.svg/240px-Blank_profile_picture.svg.png" alt="Jimin">
+      <h3>Jimin</h3>
+      <p>Vocalist, Dancer</p>
+    </div>
+    <div class="member-card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Blank_profile_picture.svg/240px-Blank_profile_picture.svg.png" alt="V">
+      <h3>V</h3>
+      <p>Vocalist</p>
+    </div>
+    <div class="member-card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Blank_profile_picture.svg/240px-Blank_profile_picture.svg.png" alt="Jungkook">
+      <h3>Jungkook</h3>
+      <p>Main Vocalist, Dancer</p>
+    </div>
+  </div>
+</section>
+
+<section id="gallery">
+  <h2 class="section-title">Gallery</h2>
+  <div class="gallery">
+    <div class="gallery-item">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/BTS_logo.svg" alt="BTS Logo">
+      <p>BTS Logo</p>
+    </div>
+    <div class="gallery-item">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/1/16/BTS_on_stage_2019.jpg" alt="BTS on stage">
+      <p>BTS Performance</p>
+    </div>
+  </div>
+</section>
+</body>
+</html>
